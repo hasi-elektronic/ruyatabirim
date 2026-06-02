@@ -1,0 +1,688 @@
+kuran|Kuran
+kuran-okumak|Kuran okumak
+abdest|abdest
+abi|abi
+abla|abla
+ada|ada
+agac|agac
+aglama|aglama
+akan-su|akan su
+akrep|akrep
+akrep-sokmasi|akrep sokması
+altin|altin
+altin-bulmak|altın bulmak
+altin-dis|altın diş
+altin-rengi|altın rengi
+altin-takmak|altın takmak
+altin-yuzuk-hediye|altın yüzük hediye
+alisveris-yapmak|alışveriş yapmak
+anahtar|anahtar
+anne|anne
+araba|araba
+araba-kazasi|araba kazası
+araba-kazasi-gecirmek|araba kazası geçirmek
+araba-surmek|araba sürmek
+arkadas|arkadaş
+ari|arı
+ari-sokmasi|arı sokması
+asansor|asansör
+asker-olmak|asker olmak
+aslan|aslan
+at|at
+ates|ates
+ay|ay
+ay-gormek|ay görmek
+ayak|ayak
+ayakkabi|ayakkabı
+aydinlik|aydınlık
+ayna|ayna
+ayna-kirilmasi|ayna kırılması
+ayi|ayı
+agac-dikmek|ağaç dikmek
+aglamak|ağlamak
+aglayan-bebek|ağlayan bebek
+agiz|ağız
+baba|baba
+bahce|bahçe
+bahce-sulamak|bahçe sulamak
+baklava|baklava
+bal|bal
+balik|balik
+balkon|balkon
+balik-tutmak|balık tutmak
+balik-yemek|balık yemek
+banyo|banyo
+baris|barış
+barismak|barışmak
+baykus|baykus
+bebek|bebek
+bebek-dogurmak|bebek doğurmak
+bebek-emzirmek|bebek emzirmek
+bebek-aglamasi|bebek-aglamasi
+bebekle-oynamak|bebekle oynamak
+beyaz|beyaz
+beyaz-dis|beyaz diş
+beyaz-elbise|beyaz elbise
+beyaz-sac|beyaz saç
+beyaz-yilan|beyaz yılan
+beyin|beyin
+bicak|bicak
+bilezik|bilezik
+bilgisayar|bilgisayar
+bina|bina
+bisiklet|bisiklet
+bodrum|bodrum
+bozuk-para|bozuk para
+bogulmak|boğulmak
+bosanma|boşanma
+bosluk|boşluk
+bulanik-su|bulanık su
+bulut|bulut
+burun|burun
+buz|buz
+bugday|buğday
+bocek|böcek
+cami|cami
+canavar|canavar
+cehennem|cehennem
+ceket|ceket
+cennet|cennet
+cennette-olmak|cennette olmak
+ceviz|ceviz
+ceylan|ceylan
+cin|cin
+civciv|civciv
+cocuk|cocuk
+cuzdan|cüzdan
+damat|damat
+dag|dağ
+daga-tirmanmak|dağa tırmanmak
+deniz|deniz
+deniz-dalgasi|deniz dalgası
+denizde-yuzmek|denizde yüzmek
+deprem|deprem
+deprem-hissetmek|deprem hissetmek
+deprem-olmasi|deprem olması
+derinlik|derinlik
+ders-calismak|ders çalışmak
+dev|dev
+deve|deve
+dil|dil
+dini-bayram|dini bayram
+dis|dis
+dis-dokulmesi|diş dökülmesi
+dis-cekmek|diş çekmek
+doktor-olmak|doktor olmak
+dolunay|dolunay
+domates|domates
+domuz|domuz
+dogum|doğum
+dua|dua
+dua-etmek|dua etmek
+dugun|dugun
+duman|duman
+durgun-deniz|durgun deniz
+duvar|duvar
+dovusmek|dövüşmek
+dukkan|dükkan
+dugun-yapmak|düğün yapmak
+dugune-gitmek|düğüne gitmek
+duserek-olmek|düşerek ölmek
+dusman|düşman
+dusman-gormek|düşman görmek
+ekin|ekin
+ekin-bicmek|ekin biçmek
+ekmek|ekmek
+ekmek-yemek|ekmek yemek
+el|el
+elbise|elbise
+eldiven|eldiven
+elma|elma
+eski-ev|eski ev
+eski-esi-gormek|eski eşi görmek
+eski-sevgili|eski sevgili
+et|et
+et-yemek|et yemek
+etek|etek
+ev|ev
+ev-satin-almak|ev satın almak
+ev-tasimak|ev taşımak
+ev-yanmasi|ev yanması
+ev-yikilmasi|ev yıkılması
+evlilik|evlilik
+ezan|ezan
+es|eş
+esek|eşek
+fabrika|fabrika
+fakir-olmak|fakir olmak
+fare|fare
+fasulye|fasulye
+fener|fener
+fidan-dikmek|fidan dikmek
+fil|fil
+fotograf|fotoğraf
+findik|fındık
+firtina|fırtına
+firtinaya-yakalanmak|fırtınaya yakalanmak
+gazete|gazete
+gelin|gelin
+gelinlik|gelinlik
+gelinlik-giymek|gelinlik giymek
+gemi|gemi
+gemiyle-yolculuk|gemiyle yolculuk
+geyik|geyik
+gec-kalmak|geç kalmak
+gri|gri
+gulmek|gulmek
+gok-gurultusu|gök gürültüsü
+gokdelen|gökdelen
+gokkusagi|gökkuşağı
+gokyuzu|gökyüzü
+gokyuzunde-ucmak|gökyüzünde uçmak
+gol|göl
+gol-kenari|göl kenarı
+gomlek|gömlek
+goz|göz
+gul|gül
+gul-bahcesi|gül bahçesi
+gulen-bebek|gülen bebek
+gumus|gümüş
+gunes|güneş
+gunesin-dogmasi|güneşin doğması
+guvercin|güvercin
+haber-almak|haber almak
+hac|hac
+hacca-gitmek|hacca gitmek
+hakim|hakim
+hali|halı
+hamile-kadin|hamile kadın
+hamilelik|hamilelik
+hapishane|hapishane
+hapsedilmek|hapsedilmek
+harf-gormek|harf görmek
+hastalik|hastalık
+hastane|hastane
+havaalani|havaalanı
+havlayan-kopek|havlayan köpek
+hayalet|hayalet
+hediye-almak|hediye almak
+hediye-vermek|hediye vermek
+horoz|horoz
+hurma|hurma
+hirsiz|hırsız
+hirsizlik|hırsızlık
+ikiz|ikiz
+incir|incir
+inek|inek
+isim-gormek|isim görmek
+istasyon|istasyon
+is-bulmak|iş bulmak
+isten-atilmak|işten atılmak
+kabe|kabe
+kabeyi-gormek|kabeyi görmek
+kabus|kabus
+kafeste-kus|kafeste kuş
+kahve|kahve
+kale|kale
+kalem|kalem
+kalp|kalp
+kan|kan
+kapali-kapi|kapalı kapı
+kapi|kapi
+kaplan|kaplan
+kaplumbaga|kaplumbağa
+kapi-acmak|kapı açmak
+kar|kar
+kar-yagmasi|kar yağması
+karanlik|karanlık
+karanlik-figur|karanlık figür
+karanlikta-kalmak|karanlıkta kalmak
+kardes|kardeş
+karga|karga
+karpuz|karpuz
+kartal|kartal
+karinca|karınca
+kavga|kavga
+kavga-etmek|kavga etmek
+kaya|kaya
+kaybolmak|kaybolmak
+kayip-ayakkabi|kayıp ayakkabı
+kayip-yuzuk|kayıp yüzük
+kaz|kaz
+kacmak|kaçmak
+kagit-para|kağıt para
+kedi|kedi
+kedi-yavrusu|kedi yavrusu
+kek|kek
+kelebek|kelebek
+kemik|kemik
+keci|keçi
+kilise|kilise
+kilit|kilit
+kilitli-kapi|kilitli kapı
+kirli-su|kirli su
+kitap|kitap
+kolye|kolye
+komsu|komşu
+kopek|kopek
+korku|korku
+kovalanmak|kovalanmak
+koyun|koyun
+kosmak|koşmak
+kucakta-bebek|kucakta bebek
+kulak|kulak
+kule|kule
+kum|kum
+kurbaga|kurbağa
+kurt|kurt
+kuru-agac|kuru ağaç
+kus|kus
+kuyu|kuyu
+kuzu|kuzu
+kopek-yavrusu|köpek yavrusu
+kopek-isirmasi|köpek ısırması
+kopekbaligi|köpekbalığı
+kopru|köprü
+kopruden-gecmek|köprüden geçmek
+kotu-haber-almak|kötü haber almak
+kupe|küpe
+kilic|kılıç
+kirmizi|kırmızı
+kirmizi-elbise|kırmızı elbise
+kirik-ayna|kırık ayna
+lamba|lamba
+leylek|leylek
+makas|makas
+masa|masa
+mavi|mavi
+maymun|maymun
+magara|mağara
+magara-karanligi|mağara karanlığı
+mektup|mektup
+mektup-almak|mektup almak
+melek|melek
+melek-gormek|melek görmek
+merdiven|merdiven
+merdiven-inmek|merdiven inmek
+merdiven-cikmak|merdiven çıkmak
+mescit|mescit
+meyve|meyve
+meyve-toplamak|meyve toplamak
+meyve-yemek|meyve yemek
+mezar|mezar
+mezar-ziyareti|mezar ziyareti
+mezarlik|mezarlık
+misafir|misafir
+mont|mont
+mor|mor
+motosiklet|motosiklet
+mum|mum
+mutfak|mutfak
+mucevher|mücevher
+mujde-almak|müjde almak
+namaz|namaz
+namaz-kilmak|namaz kılmak
+namazda-olmak|namazda olmak
+nar|nar
+nehir|nehir
+nehir-gecmek|nehir geçmek
+nikah|nikah
+nisan|nişan
+nisan-yapmak|nişan yapmak
+nur|nur
+oda|oda
+ok|ok
+okul|okul
+olum|olum
+orman|orman
+ormanda-kaybolmak|ormanda kaybolmak
+oruc|oruç
+otel|otel
+otobus|otobüs
+otobusu-kacirmak|otobüsü kaçırmak
+palto|palto
+pantolon|pantolon
+papagan|papağan
+para|para
+para-kazanmak|para kazanmak
+para-vermek|para vermek
+para-calinmasi|para çalınması
+para-bulmak|para-bulmak
+parmak|parmak
+pasta|pasta
+patates|patates
+pazar|pazar
+pembe|pembe
+pencere|pencere
+pencereden-bakmak|pencereden bakmak
+perde|perde
+peygamber|peygamber
+peygamber-gormek|peygamber görmek
+peynir|peynir
+pirinc|pirinç
+polis|polis
+portakal|portakal
+pinar|pınar
+rakam-gormek|rakam görmek
+ruyada-kabe-gormek|rüyada Kabe görmek
+ruyada-kuran-okumak|rüyada Kuran okumak
+ruyada-akan-su-gormek|rüyada akan su görmek
+ruyada-aldatildigini-gormek|rüyada aldatıldığını görmek
+ruyada-alt-dis-dusmesi|rüyada alt diş düşmesi
+ruyada-altin-bilezik-gormek|rüyada altın bilezik görmek
+ruyada-altin-bulmak|rüyada altın bulmak
+ruyada-altin-gormek|rüyada altın görmek
+ruyada-altin-hediye-almak|rüyada altın hediye almak
+ruyada-altin-takmak|rüyada altın takmak
+ruyada-altin-yuzuk-takmak|rüyada altın yüzük takmak
+ruyada-ameliyat-olmak|rüyada ameliyat olmak
+ruyada-araba-kazasi-gormek|rüyada araba kazası görmek
+ruyada-araba-kullanmak|rüyada araba kullanmak
+ruyada-araba-calinmasi|rüyada araba çalınması
+ruyada-aglamak|rüyada ağlamak
+ruyada-bahceli-ev-gormek|rüyada bahçeli ev görmek
+ruyada-balik-tutmak|rüyada balık tutmak
+ruyada-balik-yemek|rüyada balık yemek
+ruyada-bebek-dogurmak|rüyada bebek doğurmak
+ruyada-bebek-emzirmek|rüyada bebek emzirmek
+ruyada-bebegi-kucagina-almak|rüyada bebeği kucağına almak
+ruyada-beyaz-dis-gormek|rüyada beyaz diş görmek
+ruyada-beyaz-kopek-gormek|rüyada beyaz köpek görmek
+ruyada-beyaz-sac-gormek|rüyada beyaz saç görmek
+ruyada-beyaz-yilan-gormek|rüyada beyaz yılan görmek
+ruyada-bina-yikilmasi|rüyada bina yıkılması
+ruyada-birinden-kacmak|rüyada birinden kaçmak
+ruyada-birini-oldurmek|rüyada birini öldürmek
+ruyada-birinin-agladigini-gormek|rüyada birinin ağladığını görmek
+ruyada-birinin-oldugunu-gormek|rüyada birinin öldüğünü görmek
+ruyada-borc-almak|rüyada borç almak
+ruyada-bozuk-para-gormek|rüyada bozuk para görmek
+ruyada-bosanmak|rüyada boşanmak
+ruyada-bulanik-su-gormek|rüyada bulanık su görmek
+ruyada-burun-kanamasi|rüyada burun kanaması
+ruyada-bicak-gormek|rüyada bıçak görmek
+ruyada-cami-gormek|rüyada cami görmek
+ruyada-cenaze-gormek|rüyada cenaze görmek
+ruyada-cennet-gormek|rüyada cennet görmek
+ruyada-dalgali-deniz-gormek|rüyada dalgalı deniz görmek
+ruyada-damat-gormek|rüyada damat görmek
+ruyada-daga-tirmanmak|rüyada dağa tırmanmak
+ruyada-deniz-gormek|rüyada deniz görmek
+ruyada-denizde-bogulmak|rüyada denizde boğulmak
+ruyada-denizde-yuzmek|rüyada denizde yüzmek
+ruyada-deprem-gormek|rüyada deprem görmek
+ruyada-dis-dusmesi|rüyada diş düşmesi
+ruyada-dis-cekmek|rüyada diş çekmek
+ruyada-doktora-gitmek|rüyada doktora gitmek
+ruyada-dua-etmek|rüyada dua etmek
+ruyada-durgun-deniz-gormek|rüyada durgun deniz görmek
+ruyada-dugun-gormek|rüyada düğün görmek
+ruyada-dugune-gitmek|rüyada düğüne gitmek
+ruyada-ekmek-gormek|rüyada ekmek görmek
+ruyada-erkek-bebek-gormek|rüyada erkek bebek görmek
+ruyada-eski-esi-gormek|rüyada eski eşi görmek
+ruyada-eski-sevgiliyi-gormek|rüyada eski sevgiliyi görmek
+ruyada-eski-sevgiliyle-evlenmek|rüyada eski sevgiliyle evlenmek
+ruyada-et-yemek|rüyada et yemek
+ruyada-ev-satin-almak|rüyada ev satın almak
+ruyada-ev-yanmasi|rüyada ev yanması
+ruyada-evde-yilan-gormek|rüyada evde yılan görmek
+ruyada-eve-tasinmak|rüyada eve taşınmak
+ruyada-evin-soyulmasi|rüyada evin soyulması
+ruyada-evlenmek|rüyada evlenmek
+ruyada-ezan-sesi-duymak|rüyada ezan sesi duymak
+ruyada-gelinlik-giymek|rüyada gelinlik giymek
+ruyada-gokyuzunde-ucmak|rüyada gökyüzünde uçmak
+ruyada-gulmek|rüyada gülmek
+ruyada-hacca-gitmek|rüyada hacca gitmek
+ruyada-hamile-oldugunu-gormek|rüyada hamile olduğunu görmek
+ruyada-hapse-girmek|rüyada hapse girmek
+ruyada-hastalanmak|rüyada hastalanmak
+ruyada-hastane-gormek|rüyada hastane görmek
+ruyada-havlayan-kopek-gormek|rüyada havlayan köpek görmek
+ruyada-hirsiz-gormek|rüyada hırsız görmek
+ruyada-ikiz-bebek-gormek|rüyada ikiz bebek görmek
+ruyada-igne-olmak|rüyada iğne olmak
+ruyada-is-bulmak|rüyada iş bulmak
+ruyada-isten-atilmak|rüyada işten atılmak
+ruyada-kan-gormek|rüyada kan görmek
+ruyada-kanli-dis-dusmesi|rüyada kanlı diş düşmesi
+ruyada-kar-gormek|rüyada kar görmek
+ruyada-kar-yagmasi|rüyada kar yağması
+ruyada-karanlikta-kalmak|rüyada karanlıkta kalmak
+ruyada-kavga-etmek|rüyada kavga etmek
+ruyada-kagit-para-gormek|rüyada kağıt para görmek
+ruyada-kedi-gormek|rüyada kedi görmek
+ruyada-kedi-saldirmasi|rüyada kedi saldırması
+ruyada-kopek-gormek|rüyada köpek görmek
+ruyada-kopek-saldirmasi|rüyada köpek saldırması
+ruyada-kopek-isirmasi|rüyada köpek ısırması
+ruyada-kopru-gormek|rüyada köprü görmek
+ruyada-kopruden-gecmek|rüyada köprüden geçmek
+ruyada-kiz-bebek-gormek|rüyada kız bebek görmek
+ruyada-melek-gormek|rüyada melek görmek
+ruyada-merdiven-cikmak|rüyada merdiven çıkmak
+ruyada-merdivenden-dusmek|rüyada merdivenden düşmek
+ruyada-mezar-gormek|rüyada mezar görmek
+ruyada-mezar-ziyareti|rüyada mezar ziyareti
+ruyada-namaz-kilmak|rüyada namaz kılmak
+ruyada-nehir-gecmek|rüyada nehir geçmek
+ruyada-nehir-gormek|rüyada nehir görmek
+ruyada-nikah-kiymak|rüyada nikah kıymak
+ruyada-nisan-yapmak|rüyada nişan yapmak
+ruyada-okula-gitmek|rüyada okula gitmek
+ruyada-ormanda-kaybolmak|rüyada ormanda kaybolmak
+ruyada-para-bulmak|rüyada para bulmak
+ruyada-para-vermek|rüyada para vermek
+ruyada-para-calinmasi|rüyada para çalınması
+ruyada-peygamberi-gormek|rüyada peygamberi görmek
+ruyada-polis-gormek|rüyada polis görmek
+ruyada-saklanmak|rüyada saklanmak
+ruyada-sac-boyamak|rüyada saç boyamak
+ruyada-sac-dokulmesi|rüyada saç dökülmesi
+ruyada-sac-kesmek|rüyada saç kesmek
+ruyada-sel-gormek|rüyada sel görmek
+ruyada-sevgilisini-baskasiyla-gormek|rüyada sevgilisini başkasıyla görmek
+ruyada-silah-gormek|rüyada silah görmek
+ruyada-siyah-kedi-gormek|rüyada siyah kedi görmek
+ruyada-siyah-kopek-gormek|rüyada siyah köpek görmek
+ruyada-siyah-yilan-gormek|rüyada siyah yılan görmek
+ruyada-sinava-girmek|rüyada sınava girmek
+ruyada-sinavda-kalmak|rüyada sınavda kalmak
+ruyada-tabut-gormek|rüyada tabut görmek
+ruyada-takip-edilmek|rüyada takip edilmek
+ruyada-temiz-su-gormek|rüyada temiz su görmek
+ruyada-uzun-sac-gormek|rüyada uzun saç görmek
+ruyada-ucak-dusmesi|rüyada uçak düşmesi
+ruyada-ucakla-ucmak|rüyada uçakla uçmak
+ruyada-ucmak|rüyada uçmak
+ruyada-ucurumdan-dusmek|rüyada uçurumdan düşmek
+ruyada-yangin-gormek|rüyada yangın görmek
+ruyada-yangindan-kacmak|rüyada yangından kaçmak
+ruyada-yara-gormek|rüyada yara görmek
+ruyada-yavru-kedi-gormek|rüyada yavru kedi görmek
+ruyada-yavru-kopek-gormek|rüyada yavru köpek görmek
+ruyada-yagmur-gormek|rüyada yağmur görmek
+ruyada-yagmurda-yurumek|rüyada yağmurda yürümek
+ruyada-yeni-araba-almak|rüyada yeni araba almak
+ruyada-yeni-ev-gormek|rüyada yeni ev görmek
+ruyada-yesil-yilan-gormek|rüyada yeşil yılan görmek
+ruyada-yol-gormek|rüyada yol görmek
+ruyada-yolda-kaybolmak|rüyada yolda kaybolmak
+ruyada-yuksekten-dusmek|rüyada yüksekten düşmek
+ruyada-yilan-gormek|rüyada yılan görmek
+ruyada-yilan-oldurmek|rüyada yılan öldürmek
+ruyada-yilan-isirmasi|rüyada yılan ısırması
+ruyada-yilanin-saldirmasi|rüyada yılanın saldırması
+ruyada-zengin-olmak|rüyada zengin olmak
+ruyada-cok-sayida-yilan-gormek|rüyada çok sayıda yılan görmek
+ruyada-curuk-dis-gormek|rüyada çürük diş görmek
+ruyada-oldugunu-gormek|rüyada öldüğünü görmek
+ruyada-olen-birinin-sarilmasi|rüyada ölen birinin sarılması
+ruyada-olmek|rüyada ölmek
+ruyada-olmus-annesini-gormek|rüyada ölmüş annesini görmek
+ruyada-olmus-babasini-gormek|rüyada ölmüş babasını görmek
+ruyada-olmus-birini-canli-gormek|rüyada ölmüş birini canlı görmek
+ruyada-olmus-biriyle-konusmak|rüyada ölmüş biriyle konuşmak
+ruyada-ogretmen-gormek|rüyada öğretmen görmek
+ruyada-ust-dis-dusmesi|rüyada üst diş düşmesi
+ruzgar|rüzgar
+ruzgarda-savrulmak|rüzgarda savrulmak
+saat|saat
+sac|sac
+sahin|sahin
+saklanmak|saklanmak
+sandalye|sandalye
+saray|saray
+sari|sarı
+sarilmak|sarılmak
+sarimsak|sarımsak
+savas|savaş
+sac-boyamak|saç boyamak
+sac-dokulmesi|saç dökülmesi
+sac-kesmek|saç kesmek
+secde|secde
+sel|sel
+sel-basmasi|sel basması
+sevgili|sevgili
+sevgiliyle-barismak|sevgiliyle barışmak
+sevinc|sevinç
+silah|silah
+sinek|sinek
+sis|sis
+siyah|siyah
+siyah-elbise|siyah elbise
+siyah-yilan|siyah yılan
+sokak|sokak
+solmus-cicek|solmuş çiçek
+sogan|soğan
+su|su
+su-baskini|su baskını
+su-icmek|su içmek
+sut|süt
+sinav|sınav
+sinava-girmek|sınava girmek
+sinavda-kalmak|sınavda kalmak
+sican|sıçan
+sigircik|sığırcık
+tabanca|tabanca
+takip-edilmek|takip edilmek
+takim-elbise|takım elbise
+tanimadigi-kisi|tanımadığı kişi
+tavuk|tavuk
+tavus-kusu|tavus kuşu
+tavsan|tavşan
+tas|taş
+tekne|tekne
+telefon|telefon
+telefon-calmasi|telefon çalması
+televizyon|televizyon
+temiz-su|temiz su
+temizlik-yapmak|temizlik yapmak
+tepe|tepe
+tilki|tilki
+timsah|timsah
+tohum|tohum
+toprak|toprak
+tren|tren
+turuncu|turuncu
+tuvalet|tuvalet
+tuz|tuz
+tirmanmak|tırmanmak
+tirnak|tırnak
+dusmek|uckmak-dusmek
+ucmak|ucmak
+uzun-sac|uzun saç
+ucak|uçak
+ucak-dusmesi|uçak düşmesi
+ucakla-ucmak|uçakla uçmak
+ucan-kus|uçan kuş
+ucagi-kacirmak|uçağı kaçırmak
+ucurum|uçurum
+ucurumdan-dusmek|uçurumdan düşmek
+volkan|volkan
+yagmur|yagmur
+yakalanmak|yakalanmak
+yangin|yangin
+yangin-cikmasi|yangın çıkması
+yanmak|yanmak
+yaprak|yaprak
+yara|yara
+yarasa|yarasa
+yatak|yatak
+yatak-odasi|yatak odası
+yazi-gormek|yazı görmek
+yagmurda-yurumek|yağmurda yürümek
+yasli-adam|yaşlı adam
+yasli-kadin|yaşlı kadın
+yelkenli|yelkenli
+yemek-pisirmek|yemek pişirmek
+yeni-araba|yeni araba
+yeni-ayakkabi|yeni ayakkabı
+yeni-ev|yeni ev
+yeni-eve-tasinmak|yeni eve taşınmak
+yesil|yeşil
+yesil-yaprak|yeşil yaprak
+yilan|yilan
+yol|yol
+yolculuk|yolculuk
+yolda-kaybolmak|yolda kaybolmak
+yumurta|yumurta
+yunus|yunus
+yon-bulamamak|yön bulamamak
+yukseklik|yükseklik
+yuksekten-dusmek|yüksekten düşmek
+yuz|yüz
+yuzmek|yüzmek
+yuzuk|yüzük
+yuzuk-takmak|yüzük takmak
+yilan-oldurmek|yılan öldürmek
+yilan-isirmasi|yılan ısırması
+yildiz|yıldız
+yildiz-kaymasi|yıldız kayması
+yirtik-elbise|yırtık elbise
+zengin-olmak|zengin olmak
+zeytin|zeytin
+zombi|zombi
+cadir|çadır
+calismak|çalışmak
+camur|çamur
+canta|çanta
+carsi|çarşı
+cati|çatı
+cay|çay
+cay-icmek|çay içmek
+cikolata|çikolata
+cimen|çimen
+cicek|çiçek
+cicek-acmasi|çiçek açması
+cicek-toplamak|çiçek toplamak
+cocukla-oynamak|çocukla oynamak
+cok-sayida-yilan|çok sayıda yılan
+corap|çorap
+col|çöl
+curuk-dis|çürük diş
+ciplaklik|çıplaklık
+okuz|öküz
+olmek|ölmek
+olmus-anne-gormek|ölmüş anne görmek
+olmus-baba-gormek|ölmüş baba görmek
+olmus-yakini-gormek|ölmüş yakını görmek
+olu|ölü
+olu-ile-konusmak|ölü ile konuşmak
+olu-kus|ölü kuş
+opmek|öpmek
+ordek|ördek
+orumcek|örümcek
+ozgur-kalmak|özgür kalmak
+ogretmen-olmak|öğretmen olmak
+uzum|üzüm
+isiran-kopek|ısıran köpek
+isik-gormek|ışık görmek
+sapka|şapka
+sarap|şarap
+seker|şeker
+selale|şelale
+semsiye|şemsiye
+seytan|şeytan
+simsek|şimşek
