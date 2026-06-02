@@ -152,7 +152,10 @@ export default {
         const { results } = await env.DB.prepare('SELECT slug FROM dictionary ORDER BY keyword').all();
         let urls = `<url><loc>${base}/</loc><priority>1.0</priority></url>`;
         urls += `<url><loc>${base}/sozluk</loc><priority>0.8</priority></url>`;
+        urls += `<url><loc>${base}/rehber</loc><priority>0.7</priority></url>`;
         urls += `<url><loc>${base}/topluluk</loc><priority>0.6</priority></url>`;
+        const blogSlugs = ['ruyalar-neden-gorulur','ruya-tabiri-nedir','sik-gorulen-ruyalar','kabus-gormek','ruyada-olmus-birini-gormek-rehber','lusid-ruya-nedir','ruyalari-hatirlamak'];
+        for (const s of blogSlugs) urls += `<url><loc>${base}/rehber/${s}</loc><priority>0.6</priority></url>`;
         for (const r of results) {
           urls += `<url><loc>${base}/sozluk/${r.slug}</loc><priority>0.7</priority></url>`;
         }
