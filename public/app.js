@@ -71,10 +71,10 @@ function renderHome(){
   <section class="block container">
     <h2>Nasıl Çalışır?</h2>
     <p class="sub">Üç adımda rüyanın anlamına ulaş.</p>
-    <div class="grid">
-      <div class="card"><h3>1. Anlat</h3><div class="views">Rüyanı kendi cümlelerinle yaz.</div></div>
-      <div class="card"><h3>2. Eşleştir</h3><div class="views">Sembolleri rüya sözlüğümüzle buluruz.</div></div>
-      <div class="card"><h3>3. Yorumla</h3><div class="views">Geleneksel + psikolojik yorum sunarız.</div></div>
+    <div class="steps-grid">
+      <div class="step-card"><span class="step-num">1</span><h3>Anlat</h3><p>Rüyanı kendi cümlelerinle yaz.</p></div>
+      <div class="step-card"><span class="step-num">2</span><h3>Eşleştir</h3><p>Sembolleri rüya sözlüğümüzle buluruz.</p></div>
+      <div class="step-card"><span class="step-num">3</span><h3>Yorumla</h3><p>Geleneksel + psikolojik yorum sunarız.</p></div>
     </div>
   </section>`;
 }
