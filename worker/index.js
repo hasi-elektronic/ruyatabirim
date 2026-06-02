@@ -120,6 +120,15 @@ export default {
     if (request.method === 'OPTIONS') return new Response(null, { headers: cors() });
 
     try {
+      // Öne çıkan / popüler semboller (ana sayfa için)
+      if (path === '/api/featured' && request.method === 'GET') {
+        // En çok görüntülenen + rastgele karışım
+        const { results } = await env.DB.prepare(
+          'SELECT keyword, slug, views FROM dictionary ORDER BY views DESC, RANDOM() LIMIT 12'
+        ).all();
+        return json(results);
+      }
+
       // Dinamik sitemap (tüm sözlük sayfaları dahil)
       if (path === '/sitemap.xml' && request.method === 'GET') {
         const base = 'https://ruyatabirim.pages.dev';

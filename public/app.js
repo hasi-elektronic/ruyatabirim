@@ -69,6 +69,11 @@ function renderHome(){
     <div class="ad-slot" id="ad-home">Reklam alanı</div>
   </div>
   <section class="block container">
+    <h2>Sık Görülen Rüyalar</h2>
+    <p class="sub">En çok merak edilen sembollerin anlamlarını keşfet.</p>
+    <div class="grid" id="featured"></div>
+  </section>
+  <section class="block container">
     <h2>Nasıl Çalışır?</h2>
     <p class="sub">Üç adımda rüyanın anlamına ulaş.</p>
     <div class="steps-grid">
@@ -77,6 +82,17 @@ function renderHome(){
       <div class="step-card"><span class="step-num">3</span><h3>Yorumla</h3><p>Geleneksel + psikolojik yorum sunarız.</p></div>
     </div>
   </section>`;
+  loadFeatured();
+}
+
+async function loadFeatured(){
+  try{
+    const list = await (await fetch(API+'/api/featured')).json();
+    const el = document.getElementById('featured');
+    if(el && list.length){
+      el.innerHTML = list.map(w=>`<a class="card" href="/sozluk/${esc(w.slug)}/"><h3>${esc(w.keyword)}</h3><div class="views">Anlamına bak →</div></a>`).join('');
+    }
+  }catch(e){}
 }
 
 async function doInterpret(){
