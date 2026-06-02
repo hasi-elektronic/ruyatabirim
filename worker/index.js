@@ -244,7 +244,48 @@ export default {
           const dreams = await env.DB.prepare('SELECT COUNT(*) c FROM dreams').first();
           const users = await env.DB.prepare('SELECT COUNT(*) c FROM users').first();
           const dict = await env.DB.prepare('SELECT COUNT(*) c FROM dictionary').first();
-          return json({ dreams: dreams.c, users: users.c, dictionary: dict.c });
+          const pub = await env.DB.prepare('SELECT COUNT(*) c FROM dreams WHERE is_public=1').first();
+          return json({ dreams: dreams.c, users: users.c, dictionary: dict.c, public_dreams: pub.c });
+        }
+
+        // Toplulukta paylaşılan rüyaları listele (moderasyon)
+        if (path === '/api/admin/public-dreams' && request.method === 'GET') {
+          const { results } = await env.DB.prepare(
+            'SELECT share_id, dream_text, matched_keywords, is_approved, views, created_at FROM dreams WHERE is_public=1 ORDER BY created_at DESC LIMIT 100'
+          ).all();
+          return json(results);
+        }
+
+        // Rüya onayını değiştir veya sil
+        if (path === '/api/admin/dream-action' && request.method === 'POST') {
+          const { share_id, action } = await request.json();
+          if (action === 'delete') {
+            await env.DB.prepare('DELETE FROM dreams WHERE share_id=?').bind(share_id).run();
+          } else if (action === 'hide') {
+            await env.DB.prepare('UPDATE dreams SET is_approved=0 WHERE share_id=?').bind(share_id).run();
+          } else if (action === 'approve') {
+            await env.DB.prepare('UPDATE dreams SET is_approved=1 WHERE share_id=?').bind(share_id).run();
+          }
+          return json({ ok: true });
+        }
+
+        // Sözlük: güncelle veya sil
+        if (path === '/api/admin/dictionary-edit' && request.method === 'POST') {
+          const { slug, classic_meaning, psychological_meaning, action } = await request.json();
+          if (action === 'delete') {
+            await env.DB.prepare('DELETE FROM dictionary WHERE slug=?').bind(slug).run();
+          } else {
+            await env.DB.prepare('UPDATE dictionary SET classic_meaning=?, psychological_meaning=? WHERE slug=?')
+              .bind(classic_meaning, psychological_meaning || '', slug).run();
+          }
+          return json({ ok: true });
+        }
+
+        // Tek sözlük detayı (admin - düzenleme için)
+        if (path === '/api/admin/dict-detail' && request.method === 'GET') {
+          const slug = url.searchParams.get('slug');
+          const row = await env.DB.prepare('SELECT keyword, slug, classic_meaning, psychological_meaning FROM dictionary WHERE slug=?').bind(slug).first();
+          return json(row || { error: 'yok' });
         }
       }
 

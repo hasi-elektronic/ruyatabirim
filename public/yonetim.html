@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>Yönetim — Rüya Tabirim</title>
+<link rel="stylesheet" href="/style.css">
+<style>
+  .admin-wrap{max-width:900px;margin:0 auto;padding:30px 20px}
+  .stat-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-bottom:30px}
+  .stat{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:20px;text-align:center}
+  .stat .num{font-family:var(--serif);font-size:32px;color:var(--lav-soft);font-weight:600}
+  .stat .lbl{font-size:13px;color:var(--text-soft);margin-top:4px}
+  .panel{background:var(--card);border:1px solid var(--border);border-radius:18px;padding:24px;margin-bottom:22px}
+  .panel h3{font-family:var(--serif);color:var(--moon);margin-bottom:16px;font-size:20px}
+  .tabs{display:flex;gap:8px;margin-bottom:20px;flex-wrap:wrap}
+  .tab{padding:9px 16px;border-radius:11px;background:rgba(182,156,240,.1);color:var(--text-soft);cursor:pointer;font-size:14px;border:1px solid var(--border-soft)}
+  .tab.active{background:rgba(182,156,240,.2);color:var(--moon)}
+  textarea,input,select{width:100%;background:rgba(10,14,31,.5);border:1px solid var(--border);border-radius:10px;padding:11px;color:var(--text);font-family:var(--sans);font-size:14px;margin-bottom:10px}
+  .row{display:flex;gap:10px;flex-wrap:wrap;align-items:center}
+  .mini{padding:7px 14px;font-size:13px;border-radius:9px;border:none;cursor:pointer;font-weight:600}
+  .mini.del{background:rgba(240,120,120,.18);color:#f0a0a0}
+  .mini.hide{background:rgba(240,200,120,.18);color:#f0d0a0}
+  .mini.ok{background:rgba(140,220,170,.18);color:#9fe0b8}
+  .item{border:1px solid var(--border-soft);border-radius:12px;padding:14px;margin-bottom:10px}
+  .item .meta{font-size:12px;color:var(--text-faint);margin-bottom:6px}
+  .item .txt{font-size:14px;color:var(--text-soft);font-style:italic;margin-bottom:8px}
+</style>
+</head>
+<body>
+<div class="admin-wrap">
+  <div style="display:flex;align-items:center;gap:12px;margin-bottom:24px">
+    <img src="/logo.svg" width="40" alt="">
+    <h2 style="font-family:var(--serif);color:var(--moon)">Yönetim Paneli</h2>
+  </div>
+
+  <div id="login" class="panel">
+    <h3>Giriş</h3>
+    <div id="loginMsg"></div>
+    <input type="password" id="adminPass" placeholder="Yönetici şifresi">
+    <button class="btn" onclick="login()">Giriş Yap</button>
+  </div>
+
+  <div id="dash" class="hidden">
+    <div class="stat-grid" id="stats"></div>
+
+    <div class="tabs">
+      <div class="tab active" data-t="add" onclick="tab('add')">Sözlük Ekle</div>
+      <div class="tab" data-t="edit" onclick="tab('edit')">Sözlük Düzenle</div>
+      <div class="tab" data-t="mod" onclick="tab('mod')">Rüya Moderasyonu</div>
+    </div>
+
+    <div id="t-add" class="panel">
+      <h3>Yeni Sözlük Kelimesi</h3>
+      <div id="addMsg"></div>
+      <div class="row">
+        <input id="aKw" placeholder="Kelime (örn: kelebek)" style="flex:1">
+        <input id="aSlug" placeholder="slug (örn: kelebek)" style="flex:1">
+      </div>
+      <textarea id="aClassic" rows="3" placeholder="Geleneksel tabir..."></textarea>
+      <textarea id="aPsy" rows="3" placeholder="Psikolojik bakış..."></textarea>
+      <button class="btn" onclick="addWord()">Ekle</button>
+    </div>
+
+    <div id="t-edit" class="panel hidden">
+      <h3>Sözlük Düzenle / Sil</h3>
+      <div id="editMsg"></div>
+      <input id="eSlug" placeholder="Düzenlenecek slug (örn: yilan)" onkeydown="if(event.key==='Enter')loadWord()">
+      <button class="mini ok" onclick="loadWord()">Getir</button>
+      <div id="editForm" class="hidden" style="margin-top:14px">
+        <input id="eKw" disabled>
+        <textarea id="eClassic" rows="3" placeholder="Geleneksel"></textarea>
+        <textarea id="ePsy" rows="3" placeholder="Psikolojik"></textarea>
+        <div class="row">
+          <button class="btn" onclick="saveWord()">Kaydet</button>
+          <button class="mini del" onclick="delWord()">Sil</button>
+        </div>
+      </div>
+    </div>
+
+    <div id="t-mod" class="panel hidden">
+      <h3>Toplulukta Paylaşılan Rüyalar</h3>
+      <div id="modList">Yükleniyor...</div>
+    </div>
+  </div>
+</div>
+
+<script>
+const API='https://ruyatabirim-api.hguencavdi.workers.dev';
+let PASS='';
+function H(){return {'Authorization':'Bearer '+PASS,'Content-Type':'application/json'}}
+
+async function login(){
+  PASS=document.getElementById('adminPass').value;
+  const r=await fetch(API+'/api/admin/stats',{headers:H()});
+  if(r.status===200){
+    document.getElementById('login').classList.add('hidden');
+    document.getElementById('dash').classList.remove('hidden');
+    loadStats(); loadMod();
+  }else{
+    document.getElementById('loginMsg').innerHTML='<div class="msg err">Şifre hatalı.</div>';
+  }
+}
+async function loadStats(){
+  const s=await (await fetch(API+'/api/admin/stats',{headers:H()})).json();
+  document.getElementById('stats').innerHTML=`
+    <div class="stat"><div class="num">${s.dreams}</div><div class="lbl">Toplam Rüya</div></div>
+    <div class="stat"><div class="num">${s.users}</div><div class="lbl">Üye</div></div>
+    <div class="stat"><div class="num">${s.dictionary}</div><div class="lbl">Sözlük</div></div>
+    <div class="stat"><div class="num">${s.public_dreams}</div><div class="lbl">Paylaşılan</div></div>`;
+}
+function tab(t){
+  document.querySelectorAll('.tab').forEach(x=>x.classList.toggle('active',x.dataset.t===t));
+  ['add','edit','mod'].forEach(x=>document.getElementById('t-'+x).classList.toggle('hidden',x!==t));
+}
+async function addWord(){
+  const body={keyword:aKw.value,slug:aSlug.value,classic_meaning:aClassic.value,psychological_meaning:aPsy.value};
+  const r=await fetch(API+'/api/admin/dictionary',{method:'POST',headers:H(),body:JSON.stringify(body)});
+  const d=await r.json();
+  document.getElementById('addMsg').innerHTML=d.ok?'<div class="msg ok">Eklendi ✓ (sayfası için yeniden build gerekir)</div>':'<div class="msg err">Hata</div>';
+  if(d.ok){aKw.value=aSlug.value=aClassic.value=aPsy.value='';loadStats();}
+}
+async function loadWord(){
+  const slug=document.getElementById('eSlug').value.trim();
+  const d=await (await fetch(API+'/api/admin/dict-detail?slug='+encodeURIComponent(slug),{headers:H()})).json();
+  if(d.error){document.getElementById('editMsg').innerHTML='<div class="msg err">Bulunamadı.</div>';return;}
+  document.getElementById('editMsg').innerHTML='';
+  document.getElementById('editForm').classList.remove('hidden');
+  document.getElementById('eKw').value=d.keyword;
+  document.getElementById('eClassic').value=d.classic_meaning;
+  document.getElementById('ePsy').value=d.psychological_meaning||'';
+}
+async function saveWord(){
+  const slug=document.getElementById('eSlug').value.trim();
+  const body={slug,classic_meaning:eClassic.value,psychological_meaning:ePsy.value,action:'edit'};
+  const r=await fetch(API+'/api/admin/dictionary-edit',{method:'POST',headers:H(),body:JSON.stringify(body)});
+  document.getElementById('editMsg').innerHTML=(await r.json()).ok?'<div class="msg ok">Kaydedildi ✓</div>':'<div class="msg err">Hata</div>';
+}
+async function delWord(){
+  if(!confirm('Bu kelimeyi silmek istediğine emin misin?'))return;
+  const slug=document.getElementById('eSlug').value.trim();
+  await fetch(API+'/api/admin/dictionary-edit',{method:'POST',headers:H(),body:JSON.stringify({slug,action:'delete'})});
+  document.getElementById('editMsg').innerHTML='<div class="msg ok">Silindi ✓</div>';
+  document.getElementById('editForm').classList.add('hidden');loadStats();
+}
+async function loadMod(){
+  const list=await (await fetch(API+'/api/admin/public-dreams',{headers:H()})).json();
+  const el=document.getElementById('modList');
+  if(!list.length){el.innerHTML='<p style="color:var(--text-soft)">Henüz paylaşılan rüya yok.</p>';return;}
+  el.innerHTML=list.map(d=>`<div class="item">
+    <div class="meta">${new Date(d.created_at*1000).toLocaleString('tr-TR')} · ${d.is_approved?'✅ Görünür':'🚫 Gizli'} · 👁${d.views}</div>
+    <div class="txt">"${(d.dream_text||'').slice(0,200).replace(/</g,'&lt;')}"</div>
+    <div class="row">
+      ${d.is_approved?`<button class="mini hide" onclick="dreamAct('${d.share_id}','hide')">Gizle</button>`:`<button class="mini ok" onclick="dreamAct('${d.share_id}','approve')">Onayla</button>`}
+      <button class="mini del" onclick="dreamAct('${d.share_id}','delete')">Sil</button>
+    </div>
+  </div>`).join('');
+}
+async function dreamAct(id,action){
+  if(action==='delete'&&!confirm('Silinsin mi?'))return;
+  await fetch(API+'/api/admin/dream-action',{method:'POST',headers:H(),body:JSON.stringify({share_id:id,action})});
+  loadMod();loadStats();
+}
+</script>
+</body>
+</html>
