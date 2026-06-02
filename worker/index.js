@@ -120,6 +120,23 @@ export default {
     if (request.method === 'OPTIONS') return new Response(null, { headers: cors() });
 
     try {
+      // Kategori listesi (sayılarla)
+      if (path === '/api/categories' && request.method === 'GET') {
+        const { results } = await env.DB.prepare(
+          'SELECT category, COUNT(*) c FROM dictionary GROUP BY category ORDER BY c DESC'
+        ).all();
+        return json(results);
+      }
+
+      // Bir kategorideki kelimeler
+      if (path.startsWith('/api/category/') && request.method === 'GET') {
+        const cat = decodeURIComponent(path.split('/').pop());
+        const { results } = await env.DB.prepare(
+          'SELECT keyword, slug FROM dictionary WHERE category=? ORDER BY keyword COLLATE NOCASE'
+        ).bind(cat).all();
+        return json(results);
+      }
+
       // Öne çıkan / popüler semboller (ana sayfa için)
       if (path === '/api/featured' && request.method === 'GET') {
         // En çok görüntülenen + rastgele karışım
