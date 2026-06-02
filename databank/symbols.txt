@@ -1,0 +1,562 @@
+# Tek kelime + kalıp karışık. Format: keyword | slug
+# slug Türkçe karakterleri sadeleştirir (ç->c, ş->s, ı->i, ö->o, ü->u, ğ->g)
+
+# === DOĞA & ELEMENTLER ===
+su
+deniz
+göl
+nehir
+yağmur
+kar
+buz
+sel
+deprem
+fırtına
+rüzgar
+şimşek
+gök gürültüsü
+sis
+bulut
+güneş
+ay
+yıldız
+gökyüzü
+gökkuşağı
+ateş
+yangın
+duman
+toprak
+çamur
+taş
+kaya
+dağ
+tepe
+mağara
+orman
+ağaç
+çiçek
+gül
+çimen
+yaprak
+meyve
+tohum
+ekin
+buğday
+çöl
+kum
+ada
+mağara karanlığı
+volkan
+şelale
+pınar
+kuyu
+göl kenarı
+
+# === HAYVANLAR ===
+yılan
+köpek
+kedi
+at
+aslan
+kaplan
+ayı
+kurt
+tilki
+tavşan
+fare
+sıçan
+balık
+köpekbalığı
+yunus
+kuş
+kartal
+güvercin
+karga
+baykuş
+horoz
+tavuk
+civciv
+ördek
+kaz
+inek
+öküz
+koyun
+kuzu
+keçi
+deve
+eşek
+domuz
+fil
+maymun
+örümcek
+akrep
+arı
+sinek
+karınca
+kelebek
+böcek
+kurbağa
+kaplumbağa
+timsah
+yarasa
+geyik
+ceylan
+sığırcık
+papağan
+tavus kuşu
+leylek
+
+# === İNSAN & VÜCUT ===
+diş
+diş dökülmesi
+saç
+saç kesmek
+saç dökülmesi
+göz
+el
+ayak
+kan
+kalp
+beyin
+yüz
+burun
+ağız
+dil
+kulak
+parmak
+tırnak
+kemik
+çıplaklık
+hamilelik
+doğum
+bebek
+çocuk
+yaşlı adam
+yaşlı kadın
+ölü
+ölmek
+hastalık
+yara
+ağlama
+gülmek
+öpmek
+sarılmak
+dövüşmek
+koşmak
+düşmek
+uçmak
+yüzmek
+tırmanmak
+kaybolmak
+
+# === AİLE & İLİŞKİLER ===
+anne
+baba
+kardeş
+abla
+abi
+eş
+sevgili
+arkadaş
+düşman
+bebek emzirmek
+evlilik
+düğün
+nişan
+boşanma
+gelin
+damat
+gelinlik
+nikah
+eski sevgili
+ölmüş yakını görmek
+tanımadığı kişi
+hamile kadın
+ikiz
+komşu
+misafir
+
+# === EV & MEKAN ===
+ev
+yeni ev
+eski ev
+oda
+mutfak
+banyo
+tuvalet
+yatak odası
+çatı
+merdiven
+kapı
+pencere
+duvar
+bahçe
+balkon
+bodrum
+asansör
+köprü
+yol
+sokak
+cami
+kilise
+okul
+hastane
+hapishane
+mezarlık
+mezar
+pazar
+çarşı
+dükkan
+otel
+saray
+kale
+kule
+bina
+gökdelen
+fabrika
+istasyon
+havaalanı
+
+# === EŞYA & NESNELER ===
+para
+altın
+gümüş
+mücevher
+yüzük
+kolye
+küpe
+bilezik
+saat
+ayna
+bıçak
+makas
+silah
+tabanca
+kılıç
+ok
+anahtar
+kilit
+çanta
+cüzdan
+telefon
+bilgisayar
+televizyon
+kitap
+kalem
+mektup
+gazete
+fotoğraf
+araba
+otobüs
+tren
+uçak
+gemi
+bisiklet
+motosiklet
+tekne
+yelkenli
+masa
+sandalye
+yatak
+halı
+perde
+lamba
+mum
+fener
+şemsiye
+çadır
+
+# === GİYİM ===
+elbise
+gömlek
+pantolon
+etek
+ayakkabı
+çorap
+şapka
+eldiven
+ceket
+palto
+mont
+takım elbise
+gelinlik giymek
+beyaz elbise
+siyah elbise
+kırmızı elbise
+yırtık elbise
+yeni ayakkabı
+kayıp ayakkabı
+
+# === YİYECEK & İÇECEK ===
+ekmek
+et
+balık yemek
+süt
+peynir
+yumurta
+bal
+şeker
+tuz
+pirinç
+çay
+kahve
+şarap
+su içmek
+elma
+portakal
+üzüm
+incir
+nar
+karpuz
+domates
+soğan
+sarımsak
+patates
+fasulye
+ceviz
+fındık
+hurma
+zeytin
+çikolata
+pasta
+baklava
+kek
+
+# === SOYUT & DURUMLAR ===
+korku
+sevinç
+ağlamak
+kavga
+savaş
+barış
+yolculuk
+kaçmak
+kovalanmak
+saklanmak
+hapsedilmek
+özgür kalmak
+zengin olmak
+fakir olmak
+sınav
+geç kalmak
+kaybolmak
+yön bulamamak
+karanlık
+aydınlık
+boşluk
+yükseklik
+derinlik
+uçurum
+
+# === DİNİ & MANEVİ ===
+namaz
+namaz kılmak
+dua
+dua etmek
+Kuran
+Kuran okumak
+hac
+kabe
+cami
+mescit
+melek
+şeytan
+cin
+peygamber
+cennet
+cehennem
+nur
+ezan
+abdest
+oruç
+secde
+dini bayram
+
+# === RENKLER & İŞARETLER ===
+beyaz
+siyah
+kırmızı
+mavi
+yeşil
+sarı
+mor
+pembe
+turuncu
+gri
+altın rengi
+rakam görmek
+isim görmek
+yazı görmek
+harf görmek
+
+# === KORKUTUCU & OLAĞANDIŞI ===
+canavar
+dev
+hayalet
+zombi
+kabus
+karanlık figür
+takip edilmek
+boğulmak
+yanmak
+düşerek ölmek
+uçurumdan düşmek
+yılan ısırması
+köpek ısırması
+arı sokması
+akrep sokması
+deprem olması
+sel basması
+ev yıkılması
+araba kazası
+uçak düşmesi
+
+# === MESLEK & EYLEM ===
+çalışmak
+para kazanmak
+iş bulmak
+işten atılmak
+alışveriş yapmak
+yemek pişirmek
+temizlik yapmak
+ders çalışmak
+öğretmen olmak
+doktor olmak
+asker olmak
+hakim
+polis
+hırsız
+hırsızlık
+yakalanmak
+
+# === BİTKİLER & TARIM ===
+fidan dikmek
+ağaç dikmek
+çiçek toplamak
+meyve toplamak
+ekin biçmek
+bahçe sulamak
+gül bahçesi
+solmuş çiçek
+kuru ağaç
+yeşil yaprak
+
+# === EK YAYGIN ARAMALAR ===
+düğün yapmak
+ağlayan bebek
+gülen bebek
+kucakta bebek
+bebek doğurmak
+diş çekmek
+beyaz diş
+çürük diş
+altın diş
+uzun saç
+beyaz saç
+saç boyamak
+deniz dalgası
+durgun deniz
+bulanık su
+akan su
+temiz su
+kirli su
+yılan öldürmek
+beyaz yılan
+siyah yılan
+çok sayıda yılan
+kedi yavrusu
+köpek yavrusu
+havlayan köpek
+ısıran köpek
+uçan kuş
+ölü kuş
+kafeste kuş
+para bulmak
+para vermek
+para çalınması
+kağıt para
+bozuk para
+altın bulmak
+altın takmak
+yüzük takmak
+kayıp yüzük
+kırık ayna
+ayna kırılması
+yeni araba
+araba sürmek
+araba kazası geçirmek
+uçakla uçmak
+gemiyle yolculuk
+denizde yüzmek
+gökyüzünde uçmak
+yüksekten düşmek
+merdiven çıkmak
+merdiven inmek
+kapı açmak
+kapalı kapı
+kilitli kapı
+pencereden bakmak
+ev satın almak
+ev taşımak
+yeni eve taşınmak
+yangın çıkması
+ev yanması
+su baskını
+deprem hissetmek
+mezar ziyareti
+ölmüş anne görmek
+ölmüş baba görmek
+ölü ile konuşmak
+peygamber görmek
+melek görmek
+cennette olmak
+namazda olmak
+hacca gitmek
+kabeyi görmek
+gelinlik giymek
+düğüne gitmek
+nişan yapmak
+sevgiliyle barışmak
+eski eşi görmek
+bebekle oynamak
+çocukla oynamak
+sınava girmek
+sınavda kalmak
+uçağı kaçırmak
+otobüsü kaçırmak
+yolda kaybolmak
+karanlıkta kalmak
+ışık görmek
+güneşin doğması
+ay görmek
+dolunay
+yıldız kayması
+kar yağması
+yağmurda yürümek
+fırtınaya yakalanmak
+rüzgarda savrulmak
+nehir geçmek
+köprüden geçmek
+dağa tırmanmak
+ormanda kaybolmak
+çiçek açması
+meyve yemek
+ekmek yemek
+et yemek
+balık tutmak
+su içmek
+çay içmek
+altın yüzük hediye
+hediye almak
+hediye vermek
+mektup almak
+telefon çalması
+haber almak
+müjde almak
+kötü haber almak
+düşman görmek
+kavga etmek
+barışmak
+ağlayarak uyanmak
+korkarak uyanmak
+gülerek uyanmak

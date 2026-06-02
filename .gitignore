@@ -1,2 +1,4 @@
 node_modules/
 .wrangler/
+databank/gen.log
+databank/gen2.log
