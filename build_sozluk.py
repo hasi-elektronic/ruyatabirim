@@ -13,17 +13,17 @@ TPL = '''<!DOCTYPE html>
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Rüyada {kw_cap} Görmek — Tabiri ve Anlamı | Rüya Tabirim</title>
-<meta name="description" content="Rüyada {kw} görmek ne anlama gelir? {desc_short} Hem geleneksel tabir hem psikolojik yorum.">
+<title>{title_phrase} — Tabiri ve Anlamı | Rüya Tabirim</title>
+<meta name="description" content="{title_phrase}: {desc_short} Hem geleneksel tabir hem psikolojik yorum.">
 <link rel="canonical" href="{base}/sozluk/{slug}">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Rüyada {kw_cap} Görmek — Tabiri ve Anlamı">
+<meta property="og:title" content="{title_phrase} — Tabiri ve Anlamı">
 <meta property="og:description" content="{desc_short}">
 <meta property="og:locale" content="tr_TR">
 <meta property="og:url" content="{base}/sozluk/{slug}">
 <meta name="twitter:card" content="summary">
 <script type="application/ld+json">
-{{"@context":"https://schema.org","@type":"Article","headline":"Rüyada {kw_cap} Görmek — Tabiri ve Anlamı","inLanguage":"tr-TR","mainEntityOfPage":"{base}/sozluk/{slug}","publisher":{{"@type":"Organization","name":"Rüya Tabirim"}}}}
+{{"@context":"https://schema.org","@type":"Article","headline":"{title_phrase} — Tabiri ve Anlamı","inLanguage":"tr-TR","mainEntityOfPage":"{base}/sozluk/{slug}","publisher":{{"@type":"Organization","name":"Rüya Tabirim"}}}}
 </script>
 <link rel="stylesheet" href="/style.css">
 </head>
@@ -43,7 +43,7 @@ TPL = '''<!DOCTYPE html>
 <main>
   <div class="container block">
     <a href="/sozluk/" style="font-size:14px">← Rüya Sözlüğü</a>
-    <h2 style="margin-top:14px;text-transform:capitalize">Rüyada {kw_cap} Görmek</h2>
+    <h2 style="margin-top:14px">{heading}</h2>
     <p class="sub">Geleneksel tabir ve psikolojik bakış açısıyla.</p>
     <div class="result">
       <h3 style="color:var(--lav-soft);margin-bottom:8px">📜 Geleneksel Tabir</h3>
@@ -74,11 +74,20 @@ for r in rows:
     classic = r['classic_meaning'] or ''
     psy = r['psychological_meaning'] or ''
     desc_short = (classic[:120] + '...') if len(classic) > 120 else classic
+    # Başlık: "rüyada" ile başlayan kalıplar tam kullanılır, tek kelimeler "Rüyada X Görmek" olur
+    kw_lower = kw.lower()
+    if kw_lower.startswith('rüyada') or kw_lower.startswith('ruyada'):
+        title_phrase = kw[0].upper() + kw[1:]  # tam ifade, ilk harf büyük
+        heading = title_phrase
+    else:
+        cap = kw[0].upper() + kw[1:]
+        title_phrase = 'Rüyada ' + cap + ' Görmek'
+        heading = title_phrase
     psy_block = ''
     if psy:
         psy_block = f'<h3 style="color:var(--lav-soft);margin:22px 0 8px">🧠 Psikolojik Bakış</h3><div class="result-text">{esc(psy)}</div>'
     page = TPL.format(
-        kw=esc(kw), kw_cap=esc(kw.capitalize()), slug=slug, base=BASE,
+        title_phrase=esc(title_phrase), heading=esc(heading), slug=slug, base=BASE,
         classic=esc(classic), psy_block=psy_block, desc_short=esc(desc_short)
     )
     d = os.path.join(OUT, slug)
