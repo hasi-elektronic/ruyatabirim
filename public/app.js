@@ -106,7 +106,7 @@ async function doInterpret(){
 }
 
 function renderResultCard(el, data, dreamText){
-  const tags = (data.keywords||[]).map(k=>`<a class="tag" href="#/sozluk/${esc(k)}">${esc(k)}</a>`).join('');
+  const tags = (data.keywords||[]).map(k=>`<a class="tag" href="/sozluk/${esc(k)}/">${esc(k)}</a>`).join('');
   const shareUrl = location.origin + '/#/ruya/' + data.share_id;
   el.innerHTML = `
     <div class="result">
@@ -127,7 +127,7 @@ async function renderDream(sid){
     const res = await fetch(API+'/api/dream/'+sid);
     const d = await res.json();
     if(d.error){ app.innerHTML=`<div class="container block"><div class="msg err">${esc(d.error)}</div></div>`; return; }
-    const tags=(d.matched_keywords||'').split(',').filter(Boolean).map(k=>`<a class="tag" href="#/sozluk/${esc(k)}">${esc(k)}</a>`).join('');
+    const tags=(d.matched_keywords||'').split(',').filter(Boolean).map(k=>`<a class="tag" href="/sozluk/${esc(k)}/">${esc(k)}</a>`).join('');
     app.innerHTML = `<div class="container block">
       <h2>Rüya Yorumu</h2>
       <p class="sub">${fmtDate(d.created_at)}</p>

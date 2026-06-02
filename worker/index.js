@@ -120,6 +120,20 @@ export default {
     if (request.method === 'OPTIONS') return new Response(null, { headers: cors() });
 
     try {
+      // Dinamik sitemap (tüm sözlük sayfaları dahil)
+      if (path === '/sitemap.xml' && request.method === 'GET') {
+        const base = 'https://ruyatabirim.pages.dev';
+        const { results } = await env.DB.prepare('SELECT slug FROM dictionary ORDER BY keyword').all();
+        let urls = `<url><loc>${base}/</loc><priority>1.0</priority></url>`;
+        urls += `<url><loc>${base}/sozluk</loc><priority>0.8</priority></url>`;
+        urls += `<url><loc>${base}/topluluk</loc><priority>0.6</priority></url>`;
+        for (const r of results) {
+          urls += `<url><loc>${base}/sozluk/${r.slug}</loc><priority>0.7</priority></url>`;
+        }
+        const xml = `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">${urls}</urlset>`;
+        return new Response(xml, { headers: { 'Content-Type': 'application/xml', ...cors() } });
+      }
+
       // Rüya yorumla
       if (path === '/api/interpret' && request.method === 'POST') {
         const ip = clientIp(request);
