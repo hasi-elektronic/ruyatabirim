@@ -52,8 +52,8 @@ function renderHome(){
   app.innerHTML = `
   <div class="hero">
     <div class="container">
-      <h1>🌙 Rüyanı Anlat, Anlamını Keşfet</h1>
-      <p>Gördüğün rüyayı yaz; hem geleneksel tabir hem de modern psikolojik bakışla yorumlayalım.</p>
+      <h1>Rüyanı Anlat,<br><span class="em">anlamını keşfet</span></h1>
+      <p>Gördüğün rüyayı yaz; hem geleneksel tabir hem de modern psikolojik bakışla, sana özel yorumlayalım.</p>
     </div>
   </div>
   <div class="container">
