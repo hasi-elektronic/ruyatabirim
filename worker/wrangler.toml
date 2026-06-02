@@ -1,0 +1,8 @@
+name = "ruyatabirim-api"
+main = "index.js"
+compatibility_date = "2024-09-23"
+
+[[d1_databases]]
+binding = "DB"
+database_name = "ruyatabirim-db"
+database_id = "f7d7c801-5421-4d03-b454-45451056cbaa"
