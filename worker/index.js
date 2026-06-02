@@ -24,6 +24,25 @@ function shareId() {
   return Math.random().toString(36).slice(2, 10) + Date.now().toString(36).slice(-4);
 }
 
+// İstemci IP'sini al
+function clientIp(request) {
+  return request.headers.get('CF-Connecting-IP') || request.headers.get('X-Forwarded-For') || 'unknown';
+}
+
+// Rate limit: limit aşıldıysa true döner (engelle)
+async function isRateLimited(db, key, limit, windowSec = 3600) {
+  const now = Math.floor(Date.now() / 1000);
+  const row = await db.prepare('SELECT count, window_start FROM rate_limits WHERE rl_key=?').bind(key).first();
+  if (!row || now - row.window_start >= windowSec) {
+    await db.prepare('INSERT INTO rate_limits (rl_key, count, window_start) VALUES (?,1,?) ON CONFLICT(rl_key) DO UPDATE SET count=1, window_start=?')
+      .bind(key, now, now).run();
+    return false;
+  }
+  if (row.count >= limit) return true;
+  await db.prepare('UPDATE rate_limits SET count=count+1 WHERE rl_key=?').bind(key).run();
+  return false;
+}
+
 // PBKDF2 şifre
 async function hashPassword(password, salt) {
   const enc = new TextEncoder();
@@ -103,6 +122,10 @@ export default {
     try {
       // Rüya yorumla
       if (path === '/api/interpret' && request.method === 'POST') {
+        const ip = clientIp(request);
+        if (await isRateLimited(env.DB, 'interpret:' + ip, 10, 3600)) {
+          return jsonError('Saatlik yorum limitine ulaştınız. Lütfen biraz sonra tekrar deneyin.', 429);
+        }
         const body = await request.json();
         const dreamText = (body.dream || '').trim();
         if (dreamText.length < 10) return jsonError('Lütfen rüyanızı biraz daha detaylı anlatın.');
@@ -156,6 +179,9 @@ export default {
 
       // Kayıt
       if (path === '/api/register' && request.method === 'POST') {
+        if (await isRateLimited(env.DB, 'auth:' + clientIp(request), 8, 3600)) {
+          return jsonError('Çok fazla deneme. Lütfen biraz sonra tekrar deneyin.', 429);
+        }
         const { email, password } = await request.json();
         if (!email || !password || password.length < 6) return jsonError('Geçerli e-posta ve en az 6 karakterli şifre girin.');
         const exists = await env.DB.prepare('SELECT id FROM users WHERE email=?').bind(email).first();
@@ -168,6 +194,9 @@ export default {
 
       // Giriş
       if (path === '/api/login' && request.method === 'POST') {
+        if (await isRateLimited(env.DB, 'auth:' + clientIp(request), 8, 3600)) {
+          return jsonError('Çok fazla deneme. Lütfen biraz sonra tekrar deneyin.', 429);
+        }
         const { email, password } = await request.json();
         const user = await env.DB.prepare('SELECT id, password_hash, password_salt FROM users WHERE email=?').bind(email).first();
         if (!user) return jsonError('E-posta veya şifre hatalı.', 401);
