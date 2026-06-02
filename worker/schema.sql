@@ -51,3 +51,11 @@ INSERT OR IGNORE INTO dictionary (keyword, slug, classic_meaning, psychological_
 ('ev', 'ev', 'Rüyada ev görmek; güvenlik, aile ve içinde bulunulan hayat düzenine işaret eder. Yeni ev hayırlı değişimdir.', 'Ev benliğin sembolüdür. Evin odaları kişiliğin farklı yönlerini temsil eder.', unixepoch()),
 ('ates', 'ates', 'Rüyada ateş görmek; tutkuya, öfkeye ya da arınmaya işaret eder. Kontrollü ateş bereket, yangın ise kavga habercisidir.', 'Ateş tutku, dönüşüm ve bastırılmış öfke enerjisinin sembolüdür.', unixepoch()),
 ('kopek', 'kopek', 'Rüyada köpek görmek; sadık bir dosta ya da bazı durumlarda düşmana işaret eder. Köpeğin tavrı yoruma yön verir.', 'Köpek sadakat, içgüdüler ve korunma ihtiyacının sembolüdür.', unixepoch());
+
+-- Oturum token'ları (giriş sonrası, 30 gün)
+CREATE TABLE IF NOT EXISTS sessions (
+  token TEXT PRIMARY KEY,
+  user_id INTEGER NOT NULL,
+  created_at INTEGER DEFAULT (unixepoch()),
+  expires_at INTEGER NOT NULL
+);

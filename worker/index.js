@@ -54,6 +54,29 @@ async function hashPassword(password, salt) {
   return btoa(String.fromCharCode(...new Uint8Array(bits)));
 }
 
+// Oturum token'ı üret + sakla (30 gün geçerli)
+async function createSession(db, userId) {
+  const bytes = crypto.getRandomValues(new Uint8Array(32));
+  const token = Array.from(bytes).map(b => b.toString(16).padStart(2, '0')).join('');
+  const expires = Math.floor(Date.now() / 1000) + 30 * 24 * 3600;
+  await db.prepare('INSERT INTO sessions (token, user_id, expires_at) VALUES (?,?,?)').bind(token, userId, expires).run();
+  return token;
+}
+
+// İstekteki token'dan user_id çöz (Authorization: Bearer <token>)
+async function authUser(db, request) {
+  const h = request.headers.get('Authorization') || '';
+  const token = h.startsWith('Bearer ') ? h.slice(7) : null;
+  if (!token) return null;
+  const row = await db.prepare('SELECT user_id, expires_at FROM sessions WHERE token=?').bind(token).first();
+  if (!row) return null;
+  if (row.expires_at < Math.floor(Date.now() / 1000)) {
+    await db.prepare('DELETE FROM sessions WHERE token=?').bind(token).run();
+    return null;
+  }
+  return row.user_id;
+}
+
 // Rüya metninde sözlük kelimelerini ara
 async function matchKeywords(db, text) {
   const lower = text.toLocaleLowerCase('tr-TR');
@@ -179,7 +202,7 @@ export default {
         const sid = shareId();
         const kwList = matched.map(m => m.keyword).join(',');
         const isPublic = body.is_public ? 1 : 0;
-        const userId = body.user_id || null;
+        const userId = await authUser(env.DB, request); // giriş yapmışsa kaydet, değilse anonim (null)
 
         await env.DB.prepare(
           'INSERT INTO dreams (share_id, user_id, dream_text, interpretation, matched_keywords, is_public, created_at) VALUES (?,?,?,?,?,?,unixepoch())'
@@ -232,7 +255,8 @@ export default {
         const salt = crypto.randomUUID();
         const hash = await hashPassword(password, salt);
         const res = await env.DB.prepare('INSERT INTO users (email, password_hash, password_salt, created_at) VALUES (?,?,?,unixepoch())').bind(email, hash, salt).run();
-        return json({ user_id: res.meta.last_row_id, email });
+        const token = await createSession(env.DB, res.meta.last_row_id);
+        return json({ user_id: res.meta.last_row_id, email, token });
       }
 
       // Giriş
@@ -245,12 +269,21 @@ export default {
         if (!user) return jsonError('E-posta veya şifre hatalı.', 401);
         const hash = await hashPassword(password, user.password_salt);
         if (hash !== user.password_hash) return jsonError('E-posta veya şifre hatalı.', 401);
-        return json({ user_id: user.id, email });
+        const token = await createSession(env.DB, user.id);
+        return json({ user_id: user.id, email, token });
       }
 
-      // Kullanıcının geçmiş rüyaları
+      // Çıkış
+      if (path === '/api/logout' && request.method === 'POST') {
+        const h = request.headers.get('Authorization') || '';
+        const tok = h.startsWith('Bearer ') ? h.slice(7) : null;
+        if (tok) await env.DB.prepare('DELETE FROM sessions WHERE token=?').bind(tok).run();
+        return json({ ok: true });
+      }
+
+      // Kullanıcının geçmiş rüyaları (token ile)
       if (path === '/api/my-dreams' && request.method === 'GET') {
-        const uid = url.searchParams.get('user_id');
+        const uid = await authUser(env.DB, request);
         if (!uid) return jsonError('Giriş gerekli.', 401);
         const { results } = await env.DB.prepare(
           'SELECT share_id, dream_text, interpretation, matched_keywords, is_public, views, created_at FROM dreams WHERE user_id=? ORDER BY created_at DESC'

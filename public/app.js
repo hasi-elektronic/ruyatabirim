@@ -1,12 +1,15 @@
 const API = 'https://ruyatabirim-api.hguencavdi.workers.dev';
 
-// Basit oturum (localStorage yerine memory + sessionStorage karışımı - artifact değil gerçek site, sessionStorage OK)
+// Oturum: token tabanlı (sessionStorage)
 const session = {
   get userId(){ return sessionStorage.getItem('rt_uid'); },
   get email(){ return sessionStorage.getItem('rt_email'); },
-  set(uid,email){ sessionStorage.setItem('rt_uid',uid); sessionStorage.setItem('rt_email',email); },
-  clear(){ sessionStorage.removeItem('rt_uid'); sessionStorage.removeItem('rt_email'); }
+  get token(){ return sessionStorage.getItem('rt_token'); },
+  set(uid,email,token){ sessionStorage.setItem('rt_uid',uid); sessionStorage.setItem('rt_email',email); if(token) sessionStorage.setItem('rt_token',token); },
+  clear(){ sessionStorage.removeItem('rt_uid'); sessionStorage.removeItem('rt_email'); sessionStorage.removeItem('rt_token'); }
 };
+// Token varsa Authorization header'ı döndür
+function authHeaders(extra){ const h=extra||{}; if(session.token) h['Authorization']='Bearer '+session.token; return h; }
 
 function fmtDate(ts){
   const d = new Date(ts*1000);
@@ -41,7 +44,7 @@ function updateNav(hash){
   if(authLink){
     authLink.textContent = session.userId ? 'Çıkış' : 'Giriş';
     authLink.setAttribute('href', session.userId ? '#/' : '#/giris');
-    authLink.onclick = session.userId ? (e)=>{e.preventDefault();session.clear();location.hash='/';route();} : null;
+    authLink.onclick = session.userId ? (e)=>{e.preventDefault();fetch(API+'/api/logout',{method:'POST',headers:authHeaders()}).catch(()=>{});session.clear();location.hash='/';route();} : null;
   }
   const histLink = document.getElementById('histLink');
   if(histLink) histLink.style.display = session.userId ? '' : 'none';
@@ -104,11 +107,10 @@ async function doInterpret(){
   btn.disabled = true; loader.classList.add('show'); result.innerHTML='';
   try{
     const res = await fetch(API+'/api/interpret',{
-      method:'POST',headers:{'Content-Type':'application/json'},
+      method:'POST',headers:authHeaders({'Content-Type':'application/json'}),
       body:JSON.stringify({
         dream:text,
-        is_public:document.getElementById('pubChk').checked,
-        user_id:session.userId||null
+        is_public:document.getElementById('pubChk').checked
       })
     });
     const data = await res.json();
@@ -214,7 +216,7 @@ async function renderCommunity(){
 async function renderHistory(){
   if(!session.userId){ location.hash='/giris'; return; }
   app.innerHTML=`<div class="container block"><h2>Geçmiş Rüyalarım</h2><p class="sub">${esc(session.email)}</p><div id="histList"><div class="loader show"><div class="spinner"></div></div></div></div>`;
-  const res=await fetch(API+'/api/my-dreams?user_id='+session.userId);
+  const res=await fetch(API+'/api/my-dreams',{headers:authHeaders()});
   const list=await res.json();
   const el=document.getElementById('histList');
   el.innerHTML = list.length ? list.map(d=>`<div class="dream-card">
@@ -259,7 +261,7 @@ async function doAuth(){
     const res=await fetch(API+ep,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({email,password})});
     const d=await res.json();
     if(d.error){ msg.innerHTML=`<div class="msg err">${esc(d.error)}</div>`; return; }
-    session.set(d.user_id,d.email);
+    session.set(d.user_id,d.email,d.token);
     location.hash='/gecmis'; route();
   }catch(e){ msg.innerHTML=`<div class="msg err">Bir hata oluştu.</div>`; }
 }
